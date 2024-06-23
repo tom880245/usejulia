@@ -1,0 +1,32 @@
+► ●☐➜➤【 】▀✚
+https://juliastats.org/MultivariateStats.jl/v0.10/
+
+●Data Transformation
+
+Whitening
+Regression
+Isotonic Regression 是非参数回归方法，假定单调性约束。
+Ridge Regression 是线性回归方法，增加了正则化项来防止过拟合。
+
+
+using MultivariateStats, RDatasets, Plots
+
+# load cars dataset
+cars = dataset("datasets", "cars")
+
+# calculate regression models
+a = llsq(cars[!,:Speed], cars[!, :Dist])
+b = isotonic(cars[!,:Speed], cars[!, :Dist])
+c=ridge(cars[!,:Speed], cars[!, :Dist], 3; dims=1, bias=true)
+# plot results
+p = scatter(cars[!,:Speed], cars[!,:Dist], xlab="Speed", ylab="Distance",
+            leg=:topleft, lab="data")
+let xs = cars[!,:Speed]
+    plot!(p, xs, map(x->a[1]*x+a[2], xs), lab="llsq")
+    plot!(p, xs, b, lab="isotonic")
+    plot!(p, xs,map(x->c[1]*x+c[2], xs), lab="ridge")
+
+end
+
+
+Linear Discriminant Analysis

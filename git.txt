@@ -1,0 +1,11 @@
+https://github.com/tom880245/usejulia.git
+git init
+
+git remote add origin https://github.com/tom880245/usejulia.git
+git add .
+
+提交更改：
+
+git commit -m "julia commit 0623 "
+
+git push -u origin master

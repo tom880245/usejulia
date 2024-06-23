@@ -1,0 +1,18 @@
+1.由git 拿下來
+
+
+
+2. 開啟julia
+
+移動到指定位置
+julia --project=$pwd
+
+
+安裝依賴
+instantiate
+
+執行test 確認可以正常運行
+pkg> test MyPackage
+
+執行src packages 檔案
+
