@@ -242,7 +242,7 @@ https://www.youtube.com/watch?v=q-LV4zoxc-E&t=206s
 
 如果只想導入某個路徑的環境
 
-export JULIA_LOAD_PATH=$PWD
+] export JULIA_LOAD_PATH=$PWD
 
 JULIA
 
